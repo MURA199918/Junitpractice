@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="UservalidateTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-25T10:20:00" hostname="DESKTOP-J9DM2GE" time="0.009">
+  <properties/>
+  <testcase name="FirstName_Check" classname="UservalidateTest" time="0.009"/>
+  <system-out><![CDATA[Valid first name
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
