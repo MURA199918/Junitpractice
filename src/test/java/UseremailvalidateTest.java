@@ -1,5 +1,6 @@
 import JunitPracticeproblem.UserValue;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -9,14 +10,16 @@ import java.util.Collection;
 
 @RunWith(Parameterized.class)
 public class UseremailvalidateTest {
-    private final String email;
-    private final boolean expectedresult;
+    private String email;
+    private boolean expectedresult;
     public UseremailvalidateTest(String email, boolean expectedresult){
         super();
         this.email=email;
         this.expectedresult=expectedresult;
     }
 
+
+    @Parameterized.Parameters
     public static Collection input(){
         return Arrays.asList(new Object[][] {{"abc@yahoo.com", true},
                                              {"abc-100@yahoo.com", true},
@@ -41,8 +44,8 @@ public class UseremailvalidateTest {
     @Test
     public void emailsamplestest(){
         UserValue validate=new UserValue();
-        boolean result=validate.Email(this.email);
-        Assert.assertEquals(this.expectedresult,result);
+        boolean result=validate.Email(email);
+        Assert.assertEquals(expectedresult,result);
     }
 
 }
