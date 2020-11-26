@@ -35,9 +35,9 @@ public class UseremailvalidateTest {
                                              {"abc123@.com.com", false},
                                              {".abc@abc.com", false},
                                              {"abc@*.com", false},
-                                             {"abc.2002@gmail.com", false},
+                                             {"abc.2002@gmail.com", true},
                                              {"abc@abc@gmail.com", false},
-                                             {"abc@gmail.com.la", false},
+                                             {"abc@gmail.com.la", true},
                                              {"abc@gmail.com.aa.au", false}});
     }
 
