@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="UservalidateTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-26T10:40:42" hostname="DESKTOP-J9DM2GE" time="0.006">
+<testsuite name="UservalidateTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-11-26T11:15:51" hostname="DESKTOP-J9DM2GE" time="0.007">
   <properties/>
-  <testcase name="FirstName_Check_istrue" classname="UservalidateTest" time="0.006"/>
+  <testcase name="Mobile_Check" classname="UservalidateTest" time="0.006"/>
+  <testcase name="FirstName_Check" classname="UservalidateTest" time="0.0"/>
+  <testcase name="LastName_Check" classname="UservalidateTest" time="0.0"/>
+  <testcase name="Password_Check" classname="UservalidateTest" time="0.0"/>
+  <testcase name="Email_Check" classname="UservalidateTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
