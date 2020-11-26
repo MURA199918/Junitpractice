@@ -10,7 +10,7 @@ import java.util.Collection;
 
 @RunWith(Parameterized.class)
 public class UseremailvalidateTest {
-    private String email;
+   /* private String email;
     private boolean expectedresult;
     public UseremailvalidateTest(String email, boolean expectedresult){
         super();
@@ -46,6 +46,6 @@ public class UseremailvalidateTest {
         UserValue validate=new UserValue();
         boolean result=validate.Email(email);
         Assert.assertEquals(expectedresult,result);
-    }
+    }*/
 
 }

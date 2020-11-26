@@ -1,18 +1,28 @@
 package JunitPracticeproblem;
 
 public class UserValue {
-
-    public boolean FirstName(String fname) {
-        if(fname.matches("^[A-Z][A-Z a-z]{3,25}$")) {
-            System.out.println("Valid first name");
-            return true;
-        }
-        else {
-            System.out.println("Invalid first name");
-            return false;
+    String message;
+    public UserValue(String message){
+        this.message=message;
+    }
+    public boolean FirstName(String message) throws UserValueException{
+        this.message=message;
+        return FirstName();
+    }
+    public boolean FirstName() throws UserValueException {
+        try {
+            if (message.matches("^[A-Z][A-Z a-z]{3,25}$")) {
+                System.out.println("Valid first name");
+                return true;
+            } else {
+                System.out.println("Invalid first name");
+                return false;
+            }
+        }catch (NullPointerException e){
+            throw new UserValueException("Please enter valid first name");
         }
     }
-
+/*
     public boolean LastName(String lname) {
         if(lname.matches("^[A-Z][A-Z a-z]{3,25}$")) {
             System.out.println("Valid last name");
@@ -55,5 +65,5 @@ public class UserValue {
             System.out.println("Invalid password");
             return false;
         }
-    }
+    }*/
 }

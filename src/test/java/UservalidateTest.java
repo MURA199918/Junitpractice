@@ -1,16 +1,20 @@
 import JunitPracticeproblem.UserValue;
+import JunitPracticeproblem.UserValueException;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class UservalidateTest {
     @Test
     public void FirstName_Check_istrue(){
-        UserValue validate=new UserValue();
-        boolean result=validate.FirstName("Murali");
-        Assert.assertEquals(true,result);
+        UserValue validate=new UserValue(null);
+        try{
+            validate.FirstName(null);
+        }catch (UserValueException e) {
+            Assert.assertEquals("Please enter valid first name", e.getMessage());
+        }
     }
 
-    @Test
+    /*@Test
     public void FirstName_Check_isfalse(){
         UserValue validate=new UserValue();
         boolean result=validate.FirstName("mu");
@@ -71,5 +75,5 @@ public class UservalidateTest {
         UserValue validate=new UserValue();
         boolean result=validate.Password("345");
         Assert.assertEquals(false,result);
-    }
+    }*/
 }
