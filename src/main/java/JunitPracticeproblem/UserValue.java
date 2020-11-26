@@ -25,7 +25,7 @@ public class UserValue {
     }
 
     public boolean Email(String email) {
-        if(email.matches("^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})$")) {
+        if(email.matches("^[a-zA-Z]+([._+-]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}+(?:\\.[a-z]{2,}){0,1}$")) {
             System.out.println("valid email address");
             return true;
         }
