@@ -13,6 +13,18 @@ public class UserValue {
         this.message=message;
         return LastName();
     }
+    public boolean Email(String message) throws UserValueException{
+        this.message=message;
+        return Email();
+    }
+    public boolean Mobile(String message) throws UserValueException{
+        this.message=message;
+        return Mobile();
+    }
+    public boolean Password(String message) throws UserValueException{
+        this.message=message;
+        return Password();
+    }
     public boolean FirstName() throws UserValueException {
         try {
             if (message.matches("^[A-Z][A-Z a-z]{3,25}$")) {
@@ -43,7 +55,7 @@ public class UserValue {
 
     }
 
-    public boolean Email(Object o) throws UserValueException {
+    public boolean Email() throws UserValueException {
         try {
             if (message.matches("^[a-zA-Z]+([._+-]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}+(?:\\.[a-z]{2,}){0,1}$")) {
                 System.out.println("valid email address");
@@ -57,7 +69,7 @@ public class UserValue {
         }
     }
 
-    public boolean Mobile(Object o) throws UserValueException {
+    public boolean Mobile() throws UserValueException {
         try{
             if(message.matches("[91 ]{3}[789]{1}\\d{9}")) {
                 System.out.println("Valid phone number");
@@ -73,7 +85,7 @@ public class UserValue {
 
     }
 
-    public boolean Password(Object o) throws UserValueException {
+    public boolean Password() throws UserValueException {
         try{
             if(message.matches("^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#&$]).{8,}$")) {
                 System.out.println("Valid password");
