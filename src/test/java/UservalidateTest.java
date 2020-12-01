@@ -11,6 +11,8 @@ public class UservalidateTest {
             validate.FirstName(null);
         }catch (UserValueException e) {
             Assert.assertEquals("Please enter valid first name", e.getMessage());
+            Assert.assertEquals(UserValueException.ExceptionType.ENTERED_NULL,e.type);
+            Assert.assertEquals(UserValueException.ExceptionType.ENTERED_EMPTY,e.type);
         }
     }
     @Test
@@ -20,6 +22,8 @@ public class UservalidateTest {
             validate.LastName(null);
         }catch(UserValueException e){
             Assert.assertEquals("Please enter valid last name", e.getMessage());
+            Assert.assertEquals(UserValueException.ExceptionType.ENTERED_EMPTY,e.type);
+            Assert.assertEquals(UserValueException.ExceptionType.ENTERED_NULL,e.type);
         }
     }
     @Test
@@ -29,6 +33,8 @@ public class UservalidateTest {
             validate.Email(null);
         }catch(UserValueException e){
             Assert.assertEquals("Please enter valid emailid", e.getMessage());
+            Assert.assertEquals(UserValueException.ExceptionType.ENTERED_NULL,e.type);
+            Assert.assertEquals(UserValueException.ExceptionType.ENTERED_EMPTY,e.type);
         }
     }
     @Test
@@ -38,6 +44,8 @@ public class UservalidateTest {
             validate.Mobile(null);
         }catch (UserValueException e){
             Assert.assertEquals("Please enter valid phone number", e.getMessage());
+            Assert.assertEquals(UserValueException.ExceptionType.ENTERED_EMPTY,e.type);
+            Assert.assertEquals(UserValueException.ExceptionType.ENTERED_NULL,e.type);
         }
     }
     @Test
@@ -47,6 +55,8 @@ public class UservalidateTest {
             validate.Password(null);
         }catch (UserValueException e) {
             Assert.assertEquals("Please enter valid password", e.getMessage());
+            Assert.assertEquals(UserValueException.ExceptionType.ENTERED_NULL,e.type);
+            Assert.assertEquals(UserValueException.ExceptionType.ENTERED_EMPTY,e.type);
         }
     }
 }

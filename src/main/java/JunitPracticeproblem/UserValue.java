@@ -27,6 +27,8 @@ public class UserValue {
     }
     public boolean FirstName() throws UserValueException {
         try {
+            if(message.length()==0)
+                throw new UserValueException(UserValueException.ExceptionType.ENTERED_EMPTY,"Please enter valid message");
             if (message.matches("^[A-Z][A-Z a-z]{3,25}$")) {
                 System.out.println("Valid first name");
                 return true;
@@ -35,12 +37,14 @@ public class UserValue {
                 return false;
             }
         }catch (NullPointerException e){
-            throw new UserValueException("Please enter valid first name");
+            throw new UserValueException(UserValueException.ExceptionType.ENTERED_NULL,"Please enter valid first name");
         }
     }
 
     public boolean LastName() throws UserValueException {
         try{
+            if(message.length()==0)
+                throw new UserValueException(UserValueException.ExceptionType.ENTERED_EMPTY,"Please enter valid message");
             if(message.matches("^[A-Z][A-Z a-z]{3,25}$")) {
                 System.out.println("Valid last name");
                 return true;
@@ -50,13 +54,15 @@ public class UserValue {
                 return false;
             }
         }catch (NullPointerException e){
-            throw new UserValueException("Please enter valid last name");
+            throw new UserValueException(UserValueException.ExceptionType.ENTERED_NULL,"Please enter valid last name");
         }
 
     }
 
     public boolean Email() throws UserValueException {
         try {
+            if(message.length()==0)
+                throw new UserValueException(UserValueException.ExceptionType.ENTERED_EMPTY,"Please enter valid message");
             if (message.matches("^[a-zA-Z]+([._+-]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}+(?:\\.[a-z]{2,}){0,1}$")) {
                 System.out.println("valid email address");
                 return true;
@@ -65,12 +71,14 @@ public class UserValue {
                 return false;
             }
         }catch (NullPointerException e){
-            throw new UserValueException("Please enter valid emailid");
+            throw new UserValueException(UserValueException.ExceptionType.ENTERED_NULL,"Please enter valid emailid");
         }
     }
 
     public boolean Mobile() throws UserValueException {
         try{
+            if(message.length()==0)
+                throw new UserValueException(UserValueException.ExceptionType.ENTERED_EMPTY,"Please enter valid message");
             if(message.matches("[91 ]{3}[789]{1}\\d{9}")) {
                 System.out.println("Valid phone number");
                 return true;
@@ -80,13 +88,15 @@ public class UserValue {
                 return false;
             }
         }catch (NullPointerException e){
-            throw new UserValueException("Please enter valid phone number");
+            throw new UserValueException(UserValueException.ExceptionType.ENTERED_NULL,"Please enter valid phone number");
         }
 
     }
 
     public boolean Password() throws UserValueException {
         try{
+            if(message.length()==0)
+                throw new UserValueException(UserValueException.ExceptionType.ENTERED_EMPTY,"Please enter valid message");
             if(message.matches("^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#&$]).{8,}$")) {
                 System.out.println("Valid password");
                 return true;
@@ -96,7 +106,7 @@ public class UserValue {
                 return false;
             }
         }catch (NullPointerException e){
-            throw new UserValueException("Please enter valid password");
+            throw new UserValueException(UserValueException.ExceptionType.ENTERED_NULL,"Please enter valid password");
         }
     }
 }
